@@ -4,6 +4,7 @@ import time
 import random
 from tqdm import tqdm
 
+
 cookies = {
     'TIKI_GUEST_TOKEN': '8jWSuIDBb2NGVzr6hsUZXpkP1FRin7lY',
     'TOKENS': '{%22access_token%22:%228jWSuIDBb2NGVzr6hsUZXpkP1FRin7lY%22%2C%22expires_in%22:157680000%2C%22expires_at%22:1763654224277%2C%22guest_token%22:%228jWSuIDBb2NGVzr6hsUZXpkP1FRin7lY%22}',
@@ -66,8 +67,9 @@ def parser_product(json):
     d['name'] = json.get('name')
     d['author'] = json.get('authors')[0].get('name') if json.get('authors') and isinstance(json.get('authors'), list) and len(json.get('authors')) > 0 else None
     d['categorie_name'] = json.get('categories').get('name')
+    # d['productset_group_name'] = json.get('productset_group_name')
     d['price'] = json.get('price')
-    d['price_usd'] = json.get('price_usd')
+    d['thumbnail_url'] = json.get('thumbnail_url')
     d['description'] = json.get('description')
     return d
 
