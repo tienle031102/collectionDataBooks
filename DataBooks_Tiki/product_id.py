@@ -26,7 +26,7 @@ params = {
 }
 
 product_id = []
-for i in range(1, 50):
+for i in range(1, 100):
     params['page'] = i
     response = requests.get('https://tiki.vn/api/v2/products', headers=headers, params=params)#, cookies=cookies)
     if response.status_code == 200:
